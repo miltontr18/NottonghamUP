@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content%}
+    <h1>Hello World</h1>
 
-<h1>Hello World</h1>
+    <p>This is to be improved by {{first_name}}</p>
 
-<p>This is to be improved by {{first_name}}</p>
+    <p>{{stuff | title}}</p>
 
-<p>{{stuff | title}}</p>
+    {% for topping in favourite_pizza %}
+        {{topping}}<br/>
+    {% endfor %}
 
-{% for topping in favourite_pizza %}
-    {{topping}}<br/>
-{% endfor %}
+    <br/><br/>
+    {{favourite_pizza.2 | capitalize}}
 
-<br/><br/>
-{{favourite_pizza.2 | capitalize}}
+{% endblock%}
